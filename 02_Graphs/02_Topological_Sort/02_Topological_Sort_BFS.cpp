@@ -1,4 +1,4 @@
-
+// Also know as Kahn Algorithm
 /*
 First Calculate the in degree for each node. Intially put all node in queue which have 0 in degree.
 Then pop front nodes and remove the edges from current node to the destination node. If the in degree
