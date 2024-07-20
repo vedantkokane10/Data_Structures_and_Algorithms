@@ -44,7 +44,7 @@ int main()
 {
 //     vector<int> arr = {1,3,6,4,7,2};
 // 	int n = 6;
-    vector<int> arr = {6,2,1,4,3,4,7};
+        vector<int> arr = {6,2,1,4,3,4,7};
 	int n = 7;
 
 	quickSort(0,n-1,arr);
