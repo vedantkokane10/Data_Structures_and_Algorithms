@@ -21,6 +21,8 @@ Apply sliding window of k size iterate over 2 maps if each element is equal then
 also delete the the characters from second map.
 */
 
+// TC - O(26 * N) ~ O(N)
+// N = s2.size
 
 bool checkInclusion(string s1, string s2) {
     unordered_map<char,int> mp1;
