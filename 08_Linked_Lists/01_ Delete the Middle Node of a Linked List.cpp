@@ -22,25 +22,52 @@ The above figure represents the given linked list.
 For n = 4, node 2 with value 3 is the middle node, which is marked in red.
 */
 
+/*
+First find out the length and then middle node by using slow and fast pointers.
+Also maintain temp node which will point to previous node of slow pointer
+-> Slow pointer will be the middle node, if length is odd
+-> Slow pointer's next node will be the middle node, if length is even
+If length is even simply assign slow next.next to to slow's next.
+If length is odd simply assign slow's next to temp's next.
+*/
+
 ListNode* deleteMiddle(ListNode* head) {
-    int n = 1;
+    int length = 0;
     ListNode* temp = head;
     while(temp != NULL){
-        n++;
         temp = temp->next;
+        length++;
     }
-    int mid = n / 2;
-    ListNode* dummy = new ListNode(-1);
-    dummy->next = head;
-    ListNode* fast = dummy;
-    ListNode* slow = dummy;
-    for(int i=0;i<=mid;i++){
-        fast = fast->next;
+
+    if(length == 1){
+        return NULL;
     }
-    while(fast != NULL){
+    
+    ListNode* fast = head;
+    ListNode* slow = head;
+    temp = head;
+
+    while(fast->next != NULL && fast->next->next != NULL){
+        temp = slow;
         slow = slow->next;
-        fast = fast->next;
+        fast = fast->next->next;
+    }   
+
+    if(length % 2 == 0){
+        if(slow->next->next != NULL){
+            slow->next = slow->next->next;
+        }
+        else{
+            slow->next = NULL;
+        }
     }
-    slow->next = slow->next->next;
-    return dummy->next;
+    else{
+        if(slow->next != NULL){
+            temp->next = slow->next;
+        }
+        else{
+            temp->next = NULL;
+        }
+    }
+    return head;
 }
