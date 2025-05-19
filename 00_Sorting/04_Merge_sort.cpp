@@ -60,5 +60,5 @@ int main(){
 	return 0;
 }
 
-// Worst / Avg  ==> O(nlogn)
-// Best ==> O(N) + O(N) (Recursion Stack space)
+// Time => Worst / Avg  ==> O(nlogn)
+// Space Complexity ==> O(N) + O(N) (Recursion Stack space)
