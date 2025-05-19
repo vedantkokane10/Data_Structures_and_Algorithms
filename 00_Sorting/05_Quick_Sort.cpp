@@ -56,5 +56,6 @@ int main()
     return 0;
 }
 
-// TC - O(N*LogN)
+// TC => Best/Avg - O(N*LogN)
+// TC => Worst - O(N*N) => Array is already sorted
 // SC - O(N) (Recursion Stack space)
