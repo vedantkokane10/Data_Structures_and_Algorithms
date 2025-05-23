@@ -1,1 +1,1 @@
-Questions solved in google sheet refer to them!
+Questions are solved in a google sheet so refer to that!
